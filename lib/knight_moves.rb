@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
+## KnightsTravails class solves the problem of finding the shortest path for a knight
+# on a chessboard from a given start position to an end position using the
+# breadth-first search (BFS) algorithm.
+#
+# The knight's movement rules follow the same pattern as in chess: the knight
+# moves in an "L" shape (two squares in one direction and one square perpendicular,
+# or one square in one direction and two squares perpendicular). The class takes into
+# account the boundaries of an 8x8 chessboard.
 class KnightsTravails
   attr_reader :start_position, :end_position
 
