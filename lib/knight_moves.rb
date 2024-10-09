@@ -12,6 +12,29 @@ def knight_moves(start_position, end_position)
   end
 
   puts "Start position: #{start_position}, End position: #{end_position}"
+
+  # Queue holds [current_position, path]
+  queue = [[start_position, [start_position]]]
+  visited = []
+
+  until queue.empty?
+    current_position, path = queue.shift
+
+    # If the current position is the end position, return the path
+    if current_position == end_position
+      puts "You made it in #{path.length - 1} moves! Here's your path:"
+      path.each { |element| p element }
+      return
+    end
+
+    # Add the current position to the visited list
+    visited << current_position
+
+    # Add possible moves to the queue if not already visited
+    possible_moves(current_position[0], current_position[1]).each do |move|
+      queue << [move, path + [move]] unless visited.include?(move)
+    end
+  end
 end
 
 def possible_moves(start_position_x, start_position_y)
