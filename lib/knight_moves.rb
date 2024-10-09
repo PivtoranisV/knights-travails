@@ -23,5 +23,9 @@ def possible_moves(start_position_x, start_position_y)
   move6 = [start_position_x + 1, start_position_y - 2]
   move7 = [start_position_x - 1, start_position_y + 2]
   move8 = [start_position_x - 1, start_position_y - 2]
-  [move1, move2, move3, move4, move5, move6, move7, move8]
+
+  # Return moves only within the 8x8 board
+  [move1, move2, move3, move4, move5, move6, move7, move8].select do |(x, y)|
+    x.between?(0, 7) && y.between?(0, 7)
+  end
 end
