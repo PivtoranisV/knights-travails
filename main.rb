@@ -2,4 +2,5 @@
 
 require_relative 'lib/knight_moves'
 
-knight_moves([0, 0], [7, 7])
+test = KnightsTravails.new([0, 1], [7, 7])
+test.knight_moves
